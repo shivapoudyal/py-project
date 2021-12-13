@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    networks:
+       - net1
+    command: python manage.py runserver 0.0.0.0:5000
+    # ports:
+    #   - 8020:5000
+  
+  web_server:
+    build: ./nginx/
+    depends_on:
+      -  app
+    networks:
+       - net1 
+    ports:
+      - 80:80
+networks:
+  net1:
