@@ -10,10 +10,10 @@ pipeline {
                     def scannerHome = tool 'my-sonar-scanner-in-global-tool';
                     withSonarQubeEnv("sonarqube-django-2"){
                         sh "${tool("my-sonar-scanner-in-global-tool")}/bin/sonar-scanner \
-                        -Dsonar.projectKey= test-python\
+                        -Dsonar.projectKey= django-prem \
                         -Dsonar.sources=. \
                         -Dsonar.host.url=http://3.142.47.190:9000 \
-                        -Dsonar.login=a3a0cecc105324f081b7ea4642913f11a56ee695"
+                        -Dsonar.login=27e39efba649baf9e55fa38c16a986e69c8110d2"
                     }
 
                     timeout(time: 5, unit: 'MINUTES') {
