@@ -23,7 +23,7 @@ pipeline {
                         slackSend baseUrl: 'https://hooks.slack.com/services/', 
                         channel: '#slack-jenkins-pipelines', 
                         color: 'good', 
-                        message: "sonarqube code quality gate status is: ${sq.status}", 
+                        message: "prem sonarqube code quality gate status is: ${sq.status}", 
                         teamDomain: 'Devops', 
                         tokenCredentialId: 'slack-cred'
                     }
